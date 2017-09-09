@@ -104,3 +104,9 @@ $ git tag   可以查看所有标签。
 $ git tag -d v0.1 #可删除标签
 $ git push origin :refs/tags/v0.9 #删除远程标签
 
+【git alias】
+$ git config --global alias.st status
+$ git config --global alias.co checkout
+$ git config --global alias.ci commit
+$ git config --global alias.br branch
+
