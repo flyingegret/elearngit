@@ -28,6 +28,7 @@ $ git init
 
 $ git 命令
 $ git add filename #添加到暂存区
+$ git rm用于删除一个文件
 $ git commit -m “commit info” #提交到当前分支
 $ git status #查看当前版本状态
 $ git diff #查看具体修改内容 Mac上Q键退出diff状态
