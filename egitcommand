@@ -31,4 +31,9 @@ $ git add filename #添加到暂存区
 $ git commit -m “commit info” #提交到当前分支
 $ git status #查看当前版本状态
 $ git diff #查看具体修改内容 Mac上Q键退出diff状态
-$ git log #查看提交历史记录
+$ git log [--pretty=oneline#方便查看]#查看提交历史记录
+$ git reset --hard HEAD^ #回退到上一版本
+$ git reset --hard HEAD^^ #回退到上上一版本
+$ git reset --hard HEAD～ #回退到前100版本
+$ git reset --hard 3628164 #按此处的commit id 前进到该版本
+$ git reflog用来记录你的每一次命令
