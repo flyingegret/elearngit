@@ -1,4 +1,4 @@
-安装Git
+【git install】
 
 在Linux上
 首先，你可以试着输入git，看看系统有没有安装Git：
@@ -12,7 +12,7 @@ sudo apt-get install git
 直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode，选择菜单“Xcode”->“Preferences”，
 在弹出窗口中找到“Downloads”，选择“Command Line Tools”，点“Install”就可以完成安装了。
 
-git 配置
+【git config】
 
 下面的配置 本级所有的git仓库都会使用该配置
 $ git config --global user.name "Your Name"
@@ -26,13 +26,14 @@ $ git config [—global] user.email
 下面的命令用于初始化创建的本地版本库
 $ git init 
 
-$ git 命令
+【git command】
 $ git add filename #添加到暂存区
 $ git rm用于删除一个文件
 $ git commit -m “commit info” #提交到当前分支
 $ git status #查看当前版本状态
 $ git diff #查看具体修改内容 Mac上Q键退出diff状态
 $ git log [--pretty=oneline#方便查看]#查看提交历史记录
+$ git log —-graph #可查看到分支合并图 可q键退出log状态
 $ git reset --hard HEAD^ #回退到上一版本
 $ git reset --hard HEAD^^ #回退到上上一版本
 $ git reset --hard HEAD～ #回退到前100版本
@@ -42,7 +43,7 @@ $ git reflog用来记录你的每一次命令
 工作区：当前项目所在位置 版本库：对应.git文件 .git—>index：暂存区 .git—>refs—>master：本地主分支 HEAD:指针
 git 跟踪的是修改 而不是文件
 
-git 回退
+【git backup】
 git checkout -- elearngit.txt 意思就是，把elearngit.txt文件在工作区的修改全部撤销，这里有两种情况：
 一种是elearngit.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
 
@@ -55,7 +56,7 @@ git checkout -- elearngit.txt 意思就是，把elearngit.txt文件在工作区�
       就回到了场景1，第二步按场景1操作。
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库
 
-git Hub
+【git Hub】
 $ ssh-keygen -t rsa -C "youremail@example.com" #创建ssh key
 ## git Hub[git服务器端] 没有对应电脑端ssh key 公钥 则当前电脑将不能推送修改
 下面命令将添加远程仓库 git@github.com:flyingegret/elearngit.git 同本地仓库的关联 尔后 远程库的名字是orgin
@@ -68,4 +69,18 @@ $ git push -u[远程仓库为空时使用] origin master
 git remote rm origin
 下面的命令将添加新的git方式的origin  如此每次push将不再需要name&password
 $ git remote add origin git@github.com:flyingegret/elearngit.git
+
+【git branch】
+$ git checkout -b dev #git checkout命令加上-b参数表示创建并切换
+$ git branch [branch name]#创建分支
+$ git checkout [branch name] #切换分支
+$ git branch #查看当前分支
+$ git checkout master #切换到master 分支
+$ git merge dev #合并dev分支到 当前所在分支
+$ git branch -d dev #删除dev分支
+
+
+输入错误命令行后 ctrl+z退出即可
+
+
 
