@@ -37,3 +37,5 @@ $ git reset --hard HEAD^^ #回退到上上一版本
 $ git reset --hard HEAD～ #回退到前100版本
 $ git reset --hard 3628164 #按此处的commit id 前进到该版本
 $ git reflog用来记录你的每一次命令
+
+工作区：当前项目所在位置 版本库：对应.git文件 .git—>index：暂存区 .git—>refs—>master：本地主分支 HEAD:指针
