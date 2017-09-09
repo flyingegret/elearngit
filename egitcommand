@@ -64,4 +64,8 @@ $ git remote add origin git@github.com:flyingegret/elearngit.git
 下面的命令将本地仓库的所有内容推送到远程
 $ git push -u[远程仓库为空时使用] origin master
 
+下面的命令将移除http的origin
+git remote rm origin
+下面的命令将添加新的git方式的origin  如此每次push将不再需要name&password
+$ git remote add origin git@github.com:flyingegret/elearngit.git
 
