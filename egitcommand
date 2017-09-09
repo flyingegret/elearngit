@@ -82,5 +82,15 @@ $ git branch -d dev #删除dev分支
 
 输入错误命令行后 ctrl+z退出即可
 
+下面的命令可从分支上看出信息
+$ git merge --no-ff -m "merge with no-ff" dev #合并分支dev 不采用fast forward策略；
+                                               因为本次会创建一个新的commit 所以加入 -m
+分支管理策略，master保持稳定 各开发人员在其dev分支进行工作
+bug分支
+$ git stash #可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
+$ git stash list #查看存储的工作现场列表
+$ git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
+$ git stash pop 回复的同时 删除stash内容
+
 
 
