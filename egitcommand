@@ -57,3 +57,11 @@ git checkout -- elearngit.txt 意思就是，把elearngit.txt文件在工作区�
 
 git Hub
 $ ssh-keygen -t rsa -C "youremail@example.com" #创建ssh key
+## git Hub[git服务器端] 没有对应电脑端ssh key 公钥 则当前电脑将不能推送修改
+下面命令将添加远程仓库 git@github.com:flyingegret/elearngit.git 同本地仓库的关联 尔后 远程库的名字是orgin
+$ git remote add origin git@github.com:flyingegret/elearngit.git
+
+下面的命令将本地仓库的所有内容推送到远程
+$ git push -u[远程仓库为空时使用] origin master
+
+
