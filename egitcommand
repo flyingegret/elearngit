@@ -89,16 +89,18 @@ $ git merge --no-ff -m "merge with no-ff" dev #合并分支dev 不采用fast for
 bug分支
 $ git stash #可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
 $ git stash list #查看存储的工作现场列表
-$ git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
-$ git stash pop 回复的同时 删除stash内容
+$ git stash apply #恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
+$ git stash pop #恢复的同时 删除stash内容
 
 【git tag】
 
-$ git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+$ git tag <name> #用于新建一个标签，默认为HEAD，也可以指定一个commit id；
 
-$ git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+$ git tag -a <tagname> -m "blablabla..." 3可以指定标签信息；
 
-$ git tag -s <tagname> -m "blablabla..."可以用PGP签名标签；
+$ git tag -s <tagname> -m "blablabla..." #可以用PGP签名标签；
 
-$ git tag可以查看所有标签。
+$ git tag   可以查看所有标签。
+$ git tag -d v0.1 #可删除标签
+$ git push origin :refs/tags/v0.9 #删除远程标签
 
