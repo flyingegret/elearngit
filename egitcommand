@@ -92,3 +92,13 @@ $ git stash list #查看存储的工作现场列表
 $ git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
 $ git stash pop 回复的同时 删除stash内容
 
+【git tag】
+
+$ git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+
+$ git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+
+$ git tag -s <tagname> -m "blablabla..."可以用PGP签名标签；
+
+$ git tag可以查看所有标签。
+
