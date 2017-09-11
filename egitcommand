@@ -1,5 +1,8 @@
 【git install】
 
+[输入错误命令行后 ctrl+z退出即可]
+[git 跟踪的是修改 而不是文件]
+
 在Linux上
 首先，你可以试着输入git，看看系统有没有安装Git：
 [服务器端]
@@ -45,9 +48,7 @@ $ git reset --hard HEAD^^ #回退到上上一版本
 $ git reset --hard HEAD～ #回退到前100版本
 $ git reset --hard 3628164 #按此处的commit id 前进到该版本
 $ git reflog用来记录你的每一次命令
-
-工作区：当前项目所在位置 版本库：对应.git文件 .git—>index：暂存区 .git—>refs—>master：本地主分支 HEAD:指针
-git 跟踪的是修改 而不是文件
+工作区：当前项目所在位置 版本库：对应.git文件 暂存区：.git—>index   本地主分支：.git—>refs—>master 指针: HEAD
 
 【git backup】
 git checkout -- elearngit.txt 意思就是，把elearngit.txt文件在工作区的修改全部撤销，这里有两种情况：
@@ -66,15 +67,10 @@ git checkout -- elearngit.txt 意思就是，把elearngit.txt文件在工作区�
 $ ssh-keygen -t rsa -C "youremail@example.com" #创建ssh key
 ## git Hub[git服务器端] 没有对应电脑端ssh key 公钥 则当前电脑将不能推送修改
 下面命令将添加远程仓库 git@github.com:flyingegret/elearngit.git 同本地仓库的关联 尔后 远程库的名字是orgin
-$ git remote add origin git@github.com:flyingegret/elearngit.git
+$ git remote add origin git@github.com:flyingegret/elearngit.git #如此每次push将不再需要name&password
 
 下面的命令将本地仓库的所有内容推送到远程
 $ git push -u[远程仓库为空时使用] origin master
-
-下面的命令将移除http的origin
-git remote rm origin
-下面的命令将添加新的git方式的origin  如此每次push将不再需要name&password
-$ git remote add origin git@github.com:flyingegret/elearngit.git
 
 【git branch】
 $ git checkout -b dev #git checkout命令加上-b参数表示创建并切换
@@ -85,13 +81,11 @@ $ git checkout master #切换到master 分支
 $ git merge dev #合并dev分支到 当前所在分支
 $ git branch -d dev #删除dev分支
 
-
-输入错误命令行后 ctrl+z退出即可
-
 下面的命令可从分支上看出信息
 $ git merge --no-ff -m "merge with no-ff" dev #合并分支dev 不采用fast forward策略；
                                                因为本次会创建一个新的commit 所以加入 -m
 分支管理策略，master保持稳定 各开发人员在其dev分支进行工作
+
 bug分支
 $ git stash #可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
 $ git stash list #查看存储的工作现场列表
@@ -101,9 +95,7 @@ $ git stash pop #恢复的同时 删除stash内容
 【git tag】
 
 $ git tag <name> #用于新建一个标签，默认为HEAD，也可以指定一个commit id；
-
 $ git tag -a <tagname> -m "blablabla..." 3可以指定标签信息；
-
 $ git tag -s <tagname> -m "blablabla..." #可以用PGP签名标签；
 
 $ git tag   可以查看所有标签。
@@ -126,7 +118,7 @@ git pull origin master ----allow-unrelated-histories
    A:Execute the following command in your remote repository folder:
      git config --bool core.bare true
 3, Q:fatal: remote origin already exists.
-   A:1、先输入$ git remote rm origin
+   A:1、先输入$ git remote rm origin #移除远程的origin
      2、再输入$ git remote add origin git@github.com:djqiang/gitdemo.git 就不会报错了！
 
 
